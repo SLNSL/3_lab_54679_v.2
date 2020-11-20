@@ -31,12 +31,12 @@ public class Main {
 		Event.starts("Купание");
 		//--------------------------------------------------------------------------------------
 		Place Home = new Place(EPlaces.HOME);
-		Action.doing(neznayka.getName(), " купает собаку ", dogs.get(0).getName());
+		Action.doing(neznayka.getName(),"вторично", "купает собаку", dogs.get(0).getName());
 		Place garden = new Place(EPlaces.GARDEN);
 		ArrayList<EBugs> bugs = new ArrayList<EBugs>();
 		bugs.add(EBugs.GRASSHOPPER);
 		bugs.add(EBugs.СRICKET);
-		Action.doing(dogs.get(1).getName(), " ловит в " + garden.getName() + "у ",
+		Action.doing(dogs.get(1).getName(), "развлекается тем, что", " ловит в " + garden.getName() + "у ",
 				"жуков типа: " + bugs.get(0).getType() + " и " + bugs.get(1).getType() );
 		//--------------------------------------------------------------------------------------
 		Event.ends("Купание");
@@ -79,16 +79,18 @@ public class Main {
 			}
 		for (Dog dog : dogs){
 			if (dog.getExercised()){
-				DogsAngry.MakeSOAngry(dog, gardenWorker);
+				ResultOfExercises.HealthAndAngry(dog, gardenWorker);
 			}
 		}
 		//--------------------------------------------------------------------------------------
 		Event.ends("Физ-зарядка");
 		Event.starts("Отдых");
 		//--------------------------------------------------------------------------------------
-		Action.doing(neznayka.getName(), " заполняет собачий журнал ",
+		Thing book = new Thing("Собачий журнал");
+		Action.doing(neznayka.getName(), " заполняет " + book.getType(), "");
+		Action.doing(book.getType(), "обычно заполняется",
 				"всеми сколько-нибудь значительными и даже не значительными случаями из жизни собак: "
-						+ dogs.get(0).getName() + " и " + dogs.get(1).getName());
+		+ dogs.get(0).getName() + " и " + dogs.get(1).getName());
 
 		
     }
