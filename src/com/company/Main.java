@@ -21,10 +21,12 @@ public class Main {
 		for (int i = 0; i < counfOfNannies; i++){
 			nannies.add(new Human("Няня"));
 			Dog dogOfNanny = new Dog(nannies.get(i));
+			Action.doing(nannies.get(i).getName(), " гуляет в ", dogsPark.getName());
+			Action.doing(dogOfNanny.getName(), " гуляет в ", dogsPark.getName());
 		}
-		Action.doing(neznayka.getName(), " гуляют в ", dogsPark.getName());
+		Action.doing(neznayka.getName(), " гуляет в ", dogsPark.getName());
 		for (Dog dog : dogs){
-			Action.doing(dog.getName(), " гуляют в ", dogsPark.getName());
+			Action.doing(dog.getName(), " гуляет в ", dogsPark.getName());
 		}
 		//--------------------------------------------------------------------------------------
 		Event.ends("Прогулка");

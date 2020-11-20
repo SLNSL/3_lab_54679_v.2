@@ -8,6 +8,7 @@ public class Dog extends ADog {
 
     public Dog(ASomeone owner_){
         owner = owner_;
+        setName("Собака");
         System.out.println("Собака создано. Владелец: " + getOwner());
     }
 
