@@ -4,7 +4,7 @@ public class ResultOfExercises {
     public static void HealthAndAngry(ADog dog, ASomeone human) {
        Health(dog);
         System.out.print(", но");
-        Angry(dog, human);
+        Angry(human);
         System.out.println();
     }
 
@@ -12,7 +12,7 @@ public class ResultOfExercises {
         System.out.print("Физ-зарядка была полезной для самочувствия собаки: " + dog.getName());
     }
 
-    public static void Angry(ADog dog, ASomeone human){
+    public static void Angry(ASomeone human){
         System.out.print("это разозлило человека типа: " + human.getName()  + ", ведь его обязанности: следить за садом");
     }
 }
