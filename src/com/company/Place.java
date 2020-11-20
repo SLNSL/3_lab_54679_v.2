@@ -5,8 +5,8 @@ import java.util.Objects;
 public class Place {
     private EPlaces type;
 
-    Place(EPlaces Type){
-        type = Type;
+    Place(EPlaces type_){
+        type = type_;
         System.out.println("Создано место: " + type.getName());
     }
 

@@ -7,8 +7,8 @@ public enum EBugs {
 
     private String type;
 
-    EBugs(String Type) {
-        type = Type;
+    EBugs(String type_) {
+        type = type_;
     }
 
 

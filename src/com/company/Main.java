@@ -7,66 +7,66 @@ public class Main {
 
     public static void main(String[] args) {
 		//--------------------------------------------------------------------------------------
-		Human Neznayka = new Human("Незнайка");
-		ArrayList<Dog> Dogs = new ArrayList<Dog>();
-		Dogs.add(new Dog(Neznayka, "Мимишка"));
-		Dogs.add(new Dog(Neznayka, "Роланд"));
+		Human neznayka = new Human("Незнайка");
+		ArrayList<Dog> dogs = new ArrayList<Dog>();
+		dogs.add(new Dog(neznayka, "Мимишка"));
+		dogs.add(new Dog(neznayka, "Роланд"));
 		//--------------------------------------------------------------------------------------
 		Event.ends("Завтрак");
 		Event.starts("Прогулка");
 		//--------------------------------------------------------------------------------------
-		Place DogsPark = new Place(EPlaces.DOGSPARK);
-		long CountOfNannies = Math.round(Math.random() * 4 + 1);
-		ArrayList<Human> Nannies = new ArrayList<Human>();
-		for (int i = 0; i < CountOfNannies; i++){
-			Nannies.add(new Human("Няня"));
-			Dog dogOfNanny = new Dog(Nannies.get(i));
+		Place dogsPark = new Place(EPlaces.DOGSPARK);
+		long counfOfNannies = Math.round(Math.random() * 4 + 1);
+		ArrayList<Human> nannies = new ArrayList<Human>();
+		for (int i = 0; i < counfOfNannies; i++){
+			nannies.add(new Human("Няня"));
+			Dog dogOfNanny = new Dog(nannies.get(i));
 		}
-		Action.doing(Neznayka.getName(), " гуляют в ", DogsPark.getName());
-		for (Dog dogs : Dogs){
-			Action.doing(dogs.getName(), " гуляют в ", DogsPark.getName());
+		Action.doing(neznayka.getName(), " гуляют в ", dogsPark.getName());
+		for (Dog dog : dogs){
+			Action.doing(dog.getName(), " гуляют в ", dogsPark.getName());
 		}
 		//--------------------------------------------------------------------------------------
 		Event.ends("Прогулка");
 		Event.starts("Купание");
 		//--------------------------------------------------------------------------------------
 		Place Home = new Place(EPlaces.HOME);
-		Action.doing(Neznayka.getName(), " купает собаку ", Dogs.get(0).getName());
-		Place Garden = new Place(EPlaces.GARDEN);
-		ArrayList<EBugs> Bugs = new ArrayList<EBugs>();
-		Bugs.add(EBugs.GRASSHOPPER);
-		Bugs.add(EBugs.СRICKET);
-		Action.doing(Dogs.get(1).getName(), " ловит в " + Garden.getName() + "у ",
-				"жуков типа: " + Bugs.get(0).getType() + " и " + Bugs.get(1).getType() );
+		Action.doing(neznayka.getName(), " купает собаку ", dogs.get(0).getName());
+		Place garden = new Place(EPlaces.GARDEN);
+		ArrayList<EBugs> bugs = new ArrayList<EBugs>();
+		bugs.add(EBugs.GRASSHOPPER);
+		bugs.add(EBugs.СRICKET);
+		Action.doing(dogs.get(1).getName(), " ловит в " + garden.getName() + "у ",
+				"жуков типа: " + bugs.get(0).getType() + " и " + bugs.get(1).getType() );
 		//--------------------------------------------------------------------------------------
 		Event.ends("Купание");
 		Event.starts("Обед");
 		//--------------------------------------------------------------------------------------
-		Place DogsRestaurant = new Place(EPlaces.DOGSRESTAURANT);
-		Action.doing(Neznayka.getName(), " идёт обедать в ", DogsRestaurant.getName());
-		for (Dog dogs : Dogs){
-			Action.doing(dogs.getName(), " идёт обедать в ", DogsRestaurant.getName());
+		Place dogsRestaurant = new Place(EPlaces.DOGSRESTAURANT);
+		Action.doing(neznayka.getName(), " идёт обедать в ", dogsRestaurant.getName());
+		for (Dog dog : dogs){
+			Action.doing(dog.getName(), " идёт обедать в ", dogsRestaurant.getName());
 		}
 		//--------------------------------------------------------------------------------------
 		Event.ends("Обед");
 		Event.starts("Сон");
 		//--------------------------------------------------------------------------------------
-		EBugs Flies = EBugs.FLY;
-		for (Dog dogs : Dogs){
-			Action.doing(dogs.getName(), " лёг спать ", "на часика полтора");
+		EBugs flies = EBugs.FLY;
+		for (Dog dog : dogs){
+			Action.doing(dog.getName(), " лёг спать ", "на часика полтора");
 		}
-		Action.doing(Neznayka.getName(), " следит чтобы их не кусали насекомые, типа: ", Flies.getType());
+		Action.doing(neznayka.getName(), " следит чтобы их не кусали насекомые, типа: ", flies.getType());
 		//--------------------------------------------------------------------------------------
 		Event.ends("Сон");
 		Event.starts("Прогулка");
 		//--------------------------------------------------------------------------------------
-		Place Town = new Place(EPlaces.TOWN);
-		Action.doing(Neznayka.getName(), " идёт гулять в ", Town.getName());
-		for (Dog dogs : Dogs){
-			Action.doing(dogs.getName(), " идёт гулять в ", Town.getName());
+		Place town = new Place(EPlaces.TOWN);
+		Action.doing(neznayka.getName(), " идёт гулять в ", town.getName());
+		for (Dog dog : dogs){
+			Action.doing(dog.getName(), " идёт гулять в ", town.getName());
 		}
-		for (Dog dogs : Dogs){
-			DogsLove.WhatDoesHeLoves(dogs);
+		for (Dog dog : dogs){
+			DogsLove.WhatDoesHeLoves(dog);
 		}
 		//--------------------------------------------------------------------------------------
 		Event.ends("Прогулка");
@@ -74,22 +74,22 @@ public class Main {
 		//--------------------------------------------------------------------------------------
 		Human gardenWorker = new Human("Садовник");
 		Action.doing("Собаки", " делают ", "физ-зарядку");
-		for (Dog dogs : Dogs){
-			DogsExercise.DoExercise(dogs);
+		for (Dog dog : dogs){
+			DogsExercise.DoExercise(dog);
 			}
-		boolean angry = true;
-		for (Dog dogs : Dogs){
-			if (dogs.getExercised()){
-				DogsAngry.MakeSOAngry(dogs, gardenWorker);
+		for (Dog dog : dogs){
+			if (dog.getExercised()){
+				DogsAngry.MakeSOAngry(dog, gardenWorker);
 			}
 		}
 		//--------------------------------------------------------------------------------------
 		Event.ends("Физ-зарядка");
 		Event.starts("Отдых");
 		//--------------------------------------------------------------------------------------
-		Action.doing(Neznayka.getName(), " заполняет собачий журнал ",
+		Action.doing(neznayka.getName(), " заполняет собачий журнал ",
 				"всеми сколько-нибудь значительными и даже не значительными случаями из жизни собак: "
-						+ Dogs.get(0).getName() + " и " + Dogs.get(1).getName());
+						+ dogs.get(0).getName() + " и " + dogs.get(1).getName());
 
+		
     }
 }

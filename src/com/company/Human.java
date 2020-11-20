@@ -7,8 +7,8 @@ public class Human extends ASomeone{
     private String name;
     
 
-    public Human(String NameOfHuman){
-        setName(NameOfHuman);
+    public Human(String nameOfHuman){
+        setName(nameOfHuman);
         System.out.println("Существо " + getName() + " создано");
     }
 
@@ -19,8 +19,8 @@ public class Human extends ASomeone{
     }
 
     @Override
-    public void setName(String NameOfSomeone) {
-        this.name = NameOfSomeone;
+    public void setName(String nameOfSomeone) {
+        this.name = nameOfSomeone;
     }
 
     @Override

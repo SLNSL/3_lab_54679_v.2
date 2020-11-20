@@ -9,8 +9,8 @@ public enum EPlaces {
 
     private String name;
 
-    EPlaces(String NameOfPlace){
-        name = NameOfPlace;
+    EPlaces(String nameOfPlace){
+        name = nameOfPlace;
     }
 
     public String getName() {
