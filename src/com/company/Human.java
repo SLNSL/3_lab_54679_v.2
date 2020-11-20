@@ -6,9 +6,19 @@ public class Human extends ASomeone {
 
 
     public Human(String nameOfHuman) {
-        setName(nameOfHuman);
-        System.out.println("Существо " + getName() + " создано");
+        createAndPrint(nameOfHuman);
     }
 
+    public void createAndPrint(String nameOfHuman){
+        create(nameOfHuman);
+        print(nameOfHuman);
+    }
 
+    public void create(String nameOfHuman){
+        setName(nameOfHuman);
+    }
+
+    public void print(String nameOfHuman){
+        Action.doing("Существо " + nameOfHuman, " созданно");
+    }
 }

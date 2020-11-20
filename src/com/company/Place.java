@@ -7,7 +7,7 @@ public class Place {
 
     Place(EPlaces type_){
         type = type_;
-        System.out.println("Создано место: " + type.getName());
+        Action.doing("Место " + type.getName(), " созданно");
     }
 
     public String getName(){

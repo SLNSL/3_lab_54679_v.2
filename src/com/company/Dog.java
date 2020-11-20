@@ -7,14 +7,39 @@ public class Dog extends ADog {
     private boolean exercised;
 
     public Dog(ASomeone owner_){
-        owner = owner_;
-        setName("Собака Няни");
-        Action.doing(getName()," созданно");
+        createAndPrint(owner_);
     }
 
     public Dog(ASomeone owner_, String nameOfDog){
+        createAndPrint(owner_, nameOfDog);
+    }
+
+    public void createAndPrint(ASomeone owner_){
+        create(owner_);
+        print(owner_);
+    }
+
+    public void createAndPrint(ASomeone owner_, String nameOfDog){
+        create(owner_, nameOfDog);
+        print(owner_, nameOfDog);
+    }
+
+
+    public void create(ASomeone owner_){
+        owner = owner_;
+        setName("Собака Няни");
+    }
+
+    public void create(ASomeone owner_, String nameOfDog){
         owner = owner_;
         setName(nameOfDog);
+    }
+
+    public void print(ASomeone owner_){
+        Action.doing(getName()," созданно");
+    }
+
+    public void print(ASomeone owner_, String nameOfDog){
         Action.doing(" Собака " + nameOfDog, " созданно.");
     }
 
