@@ -4,6 +4,7 @@ import java.util.Objects;
 
 public abstract class ASomeone implements IHasName{
     private String name;
+    private static String Emotion;
 
     @Override
     public String getName() {
@@ -15,11 +16,12 @@ public abstract class ASomeone implements IHasName{
         this.name = NameOfSomeone;
     }
 
-    @Override
-    public String toString() {
-        return "ASomeone{" +
-                "name='" + name + '\'' +
-                '}';
+    public static void setEmotion(String emotion) {
+        Emotion = emotion;
+    }
+
+    public static String getEmotion() {
+        return Emotion;
     }
 
     @Override
@@ -33,5 +35,12 @@ public abstract class ASomeone implements IHasName{
     @Override
     public int hashCode() {
         return Objects.hash(name);
+    }
+
+    @Override
+    public String toString() {
+        return "ASomeone{" +
+                "name='" + name + '\'' +
+                '}';
     }
 }

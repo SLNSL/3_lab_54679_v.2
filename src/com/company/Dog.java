@@ -8,14 +8,14 @@ public class Dog extends ADog {
 
     public Dog(ASomeone owner_){
         owner = owner_;
-        setName("Собака");
-        System.out.println("Собака создано. Владелец: " + getOwner());
+        setName("Собака Няни");
+        Action.doing(getName()," созданно");
     }
 
     public Dog(ASomeone owner_, String nameOfDog){
         owner = owner_;
         setName(nameOfDog);
-        System.out.println("Собака " + getName() + " создано. Владелец: " + getOwner());
+        Action.doing(" Собака " + nameOfDog, " созданно.");
     }
 
     @Override
@@ -32,6 +32,13 @@ public class Dog extends ADog {
     @Override
     public String getOwner(){
         return owner.getName();
+    }
+
+
+
+    @Override
+    public String getName() {
+        return super.getName();
     }
 
     @Override
@@ -52,8 +59,8 @@ public class Dog extends ADog {
     @Override
     public String toString() {
         return "Dog{" +
-                "Owner=" + owner +
-                ", Exercised=" + exercised +
+                "owner=" + owner +
+                ", exercised=" + exercised +
                 '}';
     }
 }
